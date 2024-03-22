@@ -1,0 +1,11 @@
+[Unit]
+Description=Python daemon that automatically full screens osu!
+After=network.target
+
+[Service]
+Type=simple
+StandardOutput=journal
+ExecStart=%h/.local/bin/koff
+
+[Install]
+WantedBy=default.target
