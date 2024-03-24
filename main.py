@@ -5,6 +5,7 @@
 # 
 # It requires "dotool" (NOT "xdotool"!), which only supports Wayland. :(
 
+import os
 import time
 import psutil
 from subprocess import PIPE, Popen
@@ -13,10 +14,10 @@ from logging import getLogger, DEBUG, basicConfig
 logger = getLogger("koff-daemon")
 basicConfig(level = DEBUG)
 
-F11_DELAY = 2.5 # Adjust this if osu! is taking longer than expected to spawn a focused window.
-F11_REPEAT_AMOUNT = 3 # NOTE: Make sure full screen is already toggled in osu!
+F11_DELAY = int(os.environ.get("KOFF_DELAY", "4")) # Adjust this if osu! is taking longer than expected to spawn a focused window.
+F11_REPEAT_AMOUNT = int(os.environ.get("KOFF_REPEAT_AMOUNT", "3")) # NOTE: Make sure full screen is already toggled in osu!
 
-POLLING_RATE = 2 # Every x seconds it will scan all process and check if osu! has launched.
+POLLING_RATE = int(os.environ.get("KOFF_POLLING_RATE", "4")) # Every x seconds it will scan all process and check if osu! has launched.
 
 PROCESS_NAME = "osu!"
 

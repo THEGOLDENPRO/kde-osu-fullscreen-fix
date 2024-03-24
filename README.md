@@ -40,3 +40,20 @@ Then start it with systemd:
 systemctl --user enable koff
 systemctl --user start koff
 ```
+
+# 🔮 How to change defaults?
+You may want to adjust the defaults like example, increase the default delay time of when f11 is pressed. You can do so by overriding the .service via systemd with environment variables like so:
+```sh
+systemctl --user edit koff
+```
+then edit that file with your environment variables like so:
+```toml
+[Service]
+Environment="KOFF_DELAY=4"
+Environment="KOFF_REPEAT_AMOUNT=3"
+Environment="KOFF_POLLING_RATE=4"
+```
+then restart the daemon:
+```sh
+systemctl --user restart koff
+```
