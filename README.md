@@ -12,6 +12,9 @@
 > This script is only compatible with Wayland *but may actually not be limited to the KDE desktop environment*.
 > Also systemd is required.
 
+> [!NOTE]
+> **The issue is now [fixed](https://github.com/ppy/osu/discussions/26241#discussioncomment-9501639) so this script is no longer needed. It will now be archived. 👋**
+
 # ❓ What is this?
 There's currently an issue with osu! lazer on KDE where the game will launch minimized in the corner despite it being set to full screen. (The issue can be discussed here: https://github.com/ppy/osu/discussions/26241)
 
